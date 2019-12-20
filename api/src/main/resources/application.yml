@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sbpe
+    username: root
+    password: pass
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        generate_statistics: true
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
