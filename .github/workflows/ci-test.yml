@@ -1,0 +1,19 @@
+name: CI test
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install Java 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - name: Check code format
+        run: mvn com.coveo:fmt-maven-plugin:check
+
+      - name: Run test code
+        run: mvn test

@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,19 +15,18 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(value = IndexController.class)
+@WebMvcTest(value = MySQLController.class)
 @Slf4j
-public class IndexControllerTest {
+public class MySQLControllerTest {
 
-  @Autowired private MockMvc mvc;
-  @Autowired private ObjectMapper mapper;
+  @Autowired MockMvc mvc;
 
   @Test
-  public void test1() throws Exception {
+  void testIndex1() throws Exception {
     this.mvc
-        .perform(get("/"))
+        .perform(get("/mysql"))
         .andDo(print())
         .andExpect(status().isOk())
-        .andExpect(content().string(containsString("{}")));
+        .andExpect(content().string(containsString("[]")));
   }
 }
