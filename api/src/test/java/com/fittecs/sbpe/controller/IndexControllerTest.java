@@ -24,7 +24,7 @@ public class IndexControllerTest {
   @Autowired private ObjectMapper mapper;
 
   @Test
-  public void test1() throws Exception {
+  public void testIndex1() throws Exception {
     this.mvc
         .perform(get("/"))
         .andDo(print())

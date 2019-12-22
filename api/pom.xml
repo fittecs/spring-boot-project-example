@@ -4,7 +4,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>api</artifactId>
-  <packaging>jar</packaging>
   <name>api</name>
 
   <parent>
@@ -33,6 +32,7 @@
         <artifactId>jib-maven-plugin</artifactId>
         <version>1.7.0</version>
         <configuration>
+          <skip>false</skip>
           <from>
             <image>openjdk:11</image>
           </from>

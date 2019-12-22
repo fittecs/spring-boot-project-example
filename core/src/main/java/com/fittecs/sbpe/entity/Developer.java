@@ -9,9 +9,9 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "member")
+@Table(name = "developer")
 @Data
-public class Member {
+public class Developer {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)

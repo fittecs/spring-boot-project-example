@@ -1,12 +1,12 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_HOST:mysql}:3306/sbpe
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/sbpe
     username: root
     password: pass
     initialization-mode: always
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database: mysql
 logging:
   level:
     root: INFO

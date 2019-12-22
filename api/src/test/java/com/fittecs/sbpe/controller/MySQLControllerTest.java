@@ -24,7 +24,7 @@ public class MySQLControllerTest {
   @Test
   void testIndex1() throws Exception {
     this.mvc
-        .perform(get("/mysql"))
+        .perform(get("/mysql/"))
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().string(containsString("[]")));

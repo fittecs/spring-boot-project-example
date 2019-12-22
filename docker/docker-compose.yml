@@ -3,33 +3,18 @@ services:
   redis:
     container_name: redis
     image: redis:4
-    networks:
-      - default
     ports:
       - "${REDIS_PORT:-6379}:6379"
-    expose:
-      - 6379
   mysql:
     container_name: mysql
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: pass
       MYSQL_DATABASE: sbpe
-    networks:
-      - default
     ports:
       - "${MYSQL_PORT:-3306}:3306"
-    expose:
-      - 3306
   bigtable:
     container_name: bigtable
     image: bigtruedata/gcloud-bigtable-emulator
-    networks:
-      - default
     ports:
       - "${BIGTABLE_PORT:-8086}:8086"
-    expose:
-      - 8086
-networks:
-  default:
-    name: sbpe
