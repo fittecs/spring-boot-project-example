@@ -1,12 +1,17 @@
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/sbpe
     username: root
     password: pass
     initialization-mode: always
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 1000
   jpa:
-    database: mysql
+    properties:
+      hibernate:
+        show_sql: true
 logging:
   level:
     root: INFO

@@ -7,11 +7,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fittecs.sbpe.service.MySQLService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -20,8 +22,9 @@ import org.springframework.test.web.servlet.MockMvc;
 @Slf4j
 public class IndexControllerTest {
 
-  @Autowired private MockMvc mvc;
-  @Autowired private ObjectMapper mapper;
+  @Autowired MockMvc mvc;
+  @Autowired ObjectMapper mapper;
+  @MockBean MySQLService service;
 
   @Test
   public void testIndex1() throws Exception {

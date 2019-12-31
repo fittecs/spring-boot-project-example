@@ -15,7 +15,7 @@ public class MySQLServiceTest {
   @Autowired MySQLService service;
 
   @Test
-  public void testAllMembers1() {
-    assertNotNull(service.allMembers());
+  public void testAllDevelopers1() {
+    assertNotNull(service.allDevelopers());
   }
 }

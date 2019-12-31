@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MySQLService {
 
-  @Autowired
-  DeveloperRepository repository;
+  @Autowired DeveloperRepository repository;
 
-  public List<Developer> allMembers() {
+  public List<Developer> allDevelopers() {
     return repository.findAll();
   }
 }
