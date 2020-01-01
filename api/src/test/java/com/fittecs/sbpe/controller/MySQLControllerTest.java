@@ -2,7 +2,10 @@ package com.fittecs.sbpe.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fittecs.sbpe.entity.Developer;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @Slf4j
 public class MySQLControllerTest {
 
+  @Autowired ObjectMapper mapper;
   @Autowired TestRestTemplate restTemplate;
 
   static final MediaType CONTENT_TYPE =
@@ -30,12 +34,13 @@ public class MySQLControllerTest {
           Charset.forName("utf8"));
 
   @Test
-  public void testIndex1() {
+  public void testIndex1() throws Exception {
     Map<String, Object> params = new HashMap<>();
     ResponseEntity<String> actual = restTemplate.getForEntity("/mysql/", String.class, params);
     assertEquals(actual.getStatusCode(), HttpStatus.OK);
     assertEquals(actual.getHeaders().getContentType(), CONTENT_TYPE);
-    assertTrue(true);
-    log.info("actual.body = {}", actual.getBody());
+    assertEquals(
+        actual.getBody(),
+        mapper.writeValueAsString(Arrays.asList(new Developer(1L, "developer1"))));
   }
 }

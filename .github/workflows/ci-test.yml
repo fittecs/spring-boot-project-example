@@ -1,6 +1,9 @@
 name: CI test
 on: [push]
 
+env:
+  MYSQL_PORT: 3307
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,6 +17,11 @@ jobs:
 
       - name: Check code format
         run: mvn com.coveo:fmt-maven-plugin:check
+
+      - name: docker-compose up
+        run: |
+          cd docker
+          docker-compose up -d
 
       - name: Run test code
         run: mvn test
