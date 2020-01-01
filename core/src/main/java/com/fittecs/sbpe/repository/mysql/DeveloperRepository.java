@@ -1,6 +1,6 @@
-package com.fittecs.sbpe.repository;
+package com.fittecs.sbpe.repository.mysql;
 
-import com.fittecs.sbpe.entity.Developer;
+import com.fittecs.sbpe.entity.mysql.Developer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DeveloperRepository extends JpaRepository<Developer, Long> {}

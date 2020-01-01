@@ -12,3 +12,6 @@ spring:
     properties:
       hibernate:
         show_sql: true
+bigtable:
+  project-id: ${BIGTABLE_PROJECT_ID:emulator}
+  instance-id: ${BIGTABLE_INSTANCE_ID:test-instance}

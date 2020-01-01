@@ -1,4 +1,4 @@
-package com.fittecs.sbpe.service;
+package com.fittecs.sbpe.configure;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,12 +10,17 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class MySQLServiceTest {
+public class BigtablePropertiesWithDefaultValueTest {
 
-  @Autowired MySQLService service;
+  @Autowired BigtableProperties props;
 
   @Test
-  public void testAllDevelopers1() {
-    assertNotNull(service.allDevelopers());
+  void testProjectId() {
+    assertEquals("emulator", props.getProjectId());
+  }
+
+  @Test
+  void testInstanceId() {
+    assertEquals("test-instance", props.getInstanceId());
   }
 }

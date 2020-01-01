@@ -3,7 +3,7 @@ package com.fittecs.sbpe.controller;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fittecs.sbpe.entity.Developer;
+import com.fittecs.sbpe.entity.mysql.Developer;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.HashMap;
