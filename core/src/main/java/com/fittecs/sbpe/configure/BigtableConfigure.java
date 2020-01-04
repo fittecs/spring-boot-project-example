@@ -1,5 +1,6 @@
 package com.fittecs.sbpe.configure;
 
+import com.fittecs.sbpe.properties.BigtableProperties;
 import com.google.cloud.bigtable.hbase.BigtableConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

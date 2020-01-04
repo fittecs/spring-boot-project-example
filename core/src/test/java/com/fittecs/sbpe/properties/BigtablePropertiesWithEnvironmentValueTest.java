@@ -1,8 +1,7 @@
-package com.fittecs.sbpe.configure;
+package com.fittecs.sbpe.properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
     properties = {"BIGTABLE_PROJECT_ID=projectId", "BIGTABLE_INSTANCE_ID=instanceId"})
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@Slf4j
-public class BigtablePropertiesWithEnvironmentVariableTest {
+public class BigtablePropertiesWithEnvironmentValueTest {
 
   @Autowired BigtableProperties props;
 

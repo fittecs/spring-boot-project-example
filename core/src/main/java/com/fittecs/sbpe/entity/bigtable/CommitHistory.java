@@ -1,11 +1,15 @@
 package com.fittecs.sbpe.entity.bigtable;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.util.Bytes;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommitHistory {
 
   public static final TableName TABLE_NAME = TableName.valueOf("commit_history");

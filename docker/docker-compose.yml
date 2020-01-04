@@ -13,8 +13,3 @@ services:
       MYSQL_DATABASE: sbpe
     ports:
       - "${MYSQL_PORT:-3306}:3306"
-  bigtable:
-    container_name: bigtable
-    image: bigtruedata/gcloud-bigtable-emulator
-    ports:
-      - "${BIGTABLE_PORT:-8086}:8086"

@@ -1,4 +1,4 @@
-package com.fittecs.sbpe.configure;
+package com.fittecs.sbpe.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.fittecs.sbpe.configure;
+package com.fittecs.sbpe.properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
