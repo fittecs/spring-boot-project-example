@@ -10,13 +10,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class BigtablePropertiesWithDefaultValueTest {
+public class TestBigtablePropertiesTest {
 
   @Autowired BigtableProperties props;
 
   @Test
   void testProjectId() {
-    assertEquals("emulator", props.getProjectId());
+    assertEquals("hogehoge", props.getProjectId());
   }
 
   @Test

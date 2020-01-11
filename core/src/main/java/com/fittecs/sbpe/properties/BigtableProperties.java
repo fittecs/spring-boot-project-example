@@ -1,14 +1,8 @@
 package com.fittecs.sbpe.properties;
 
-import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+public interface BigtableProperties {
 
-@Component
-@ConfigurationProperties("bigtable")
-@Data
-public class BigtableProperties {
+  String getProjectId();
 
-  private String projectId;
-  private String instanceId;
+  String getInstanceId();
 }

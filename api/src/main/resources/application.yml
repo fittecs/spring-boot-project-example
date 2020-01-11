@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/sbpe
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB_NAME:sbpe}
     username: root
     password: pass
     initialization-mode: always
@@ -13,7 +13,7 @@ spring:
       hibernate:
         show_sql: true
 bigtable:
-  project-id: ${BIGTABLE_PROJECT_ID:emulator}
+  project-id: ${BIGTABLE_PROJECT_ID:test-sbpe}
   instance-id: ${BIGTABLE_INSTANCE_ID:test-instance}
 logging:
   level:
