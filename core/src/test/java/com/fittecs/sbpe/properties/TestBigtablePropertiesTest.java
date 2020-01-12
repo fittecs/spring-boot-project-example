@@ -16,11 +16,11 @@ public class TestBigtablePropertiesTest {
 
   @Test
   void testProjectId() {
-    assertEquals("hogehoge", props.getProjectId());
+    assertEquals("test-sbpe", props.getProjectId());
   }
 
   @Test
   void testInstanceId() {
-    assertEquals("test-instance", props.getInstanceId());
+    assertTrue(props.getInstanceId().matches("test-instance-[a-zA-Z0-9]{6}-[0-9]{14}"));
   }
 }

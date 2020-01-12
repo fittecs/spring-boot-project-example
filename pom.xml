@@ -117,11 +117,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit</groupId>
-      <artifactId>junit5-api</artifactId>
-      <version>5.0.0-ALPHA</version>
-    </dependency>
-    <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>${mockito.version}</version>
@@ -151,6 +146,7 @@
             <junit.jupiter.extensions.autodetection.enabled>true
             </junit.jupiter.extensions.autodetection.enabled>
           </systemPropertyVariables>
+          <excludedGroups>with-gcp-services</excludedGroups>
         </configuration>
       </plugin>
       <plugin>
