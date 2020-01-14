@@ -14,3 +14,7 @@ hs_err_pid*
 .idea
 target/
 docker/volumes/mysql
+.classpath
+.settings
+.project
+.factorypath

@@ -24,10 +24,5 @@ jobs:
           cd docker
           docker-compose up -d
 
-      - name: Start Bigtable emulator
-        run: |
-          sudo apt-get update && sudo apt-get install google-cloud-sdk-bigtable-emulator
-          gcloud beta emulators bigtable start -q &
-
       - name: Run test code
         run: mvn test

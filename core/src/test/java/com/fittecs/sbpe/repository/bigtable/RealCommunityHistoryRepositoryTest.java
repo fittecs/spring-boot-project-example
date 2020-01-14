@@ -7,6 +7,7 @@ import com.fittecs.sbpe.junit.WithGcpServices;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.hbase.shaded.com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class RealCommunityHistoryRepositoryTest {
 
   @Autowired CommitHistoryRepository repository;
 
+  @Disabled
   @Test
   void testOperation() throws IOException {
     try {
