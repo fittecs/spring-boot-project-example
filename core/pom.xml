@@ -12,8 +12,4 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <properties>
-    <start-class>com.fittecs.sbpe.Application</start-class>
-  </properties>
-
 </project>

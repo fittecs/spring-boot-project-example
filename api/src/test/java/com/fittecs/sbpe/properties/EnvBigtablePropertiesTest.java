@@ -12,17 +12,17 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("default")
-public class DefaultBigtablePropertiesWithDefaultValueTest {
+public class EnvBigtablePropertiesTest {
 
   @Autowired BigtableProperties props;
 
   @Test
   void testProjectId() {
-    assertEquals("test-sbpe", props.getProjectId());
+    assertEquals("projectId", props.getProjectId());
   }
 
   @Test
   void testInstanceId() {
-    assertEquals("test-instance", props.getInstanceId());
+    assertEquals("instanceId", props.getInstanceId());
   }
 }

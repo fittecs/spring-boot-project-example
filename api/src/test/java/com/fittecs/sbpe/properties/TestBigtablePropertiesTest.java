@@ -2,20 +2,18 @@ package com.fittecs.sbpe.properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@TestPropertySource(
-    properties = {"BIGTABLE_PROJECT_ID=projectId", "BIGTABLE_INSTANCE_ID=instanceId"})
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@ActiveProfiles("default")
-public class DefaultBigtablePropertiesWithEnvironmentValueTest {
+@ActiveProfiles("test")
+public class TestBigtablePropertiesTest {
 
   @Autowired BigtableProperties props;
 
@@ -26,6 +24,7 @@ public class DefaultBigtablePropertiesWithEnvironmentValueTest {
 
   @Test
   void testInstanceId() {
-    assertEquals("instanceId", props.getInstanceId());
+    assertLinesMatch(
+        Arrays.asList("instanceId-[a-zA-Z0-9]{6}-[0-9]{14}"), Arrays.asList(props.getInstanceId()));
   }
 }

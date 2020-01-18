@@ -1,37 +1,33 @@
 package com.fittecs.sbpe.controller;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.*;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fittecs.sbpe.service.MySQLService;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(value = IndexController.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
-public class IndexControllerTest {
+public class IndexControllerTest implements ControllerTestHelper {
 
-  @Autowired MockMvc mvc;
-  @Autowired ObjectMapper mapper;
-  @MockBean MySQLService service;
+  @Autowired TestRestTemplate restTemplate;
 
   @Test
-  public void testIndex1() throws Exception {
-    this.mvc
-        .perform(get("/"))
-        .andDo(print())
-        .andExpect(status().isOk())
-        .andExpect(content().string(containsString("{}")));
+  public void testIndex1() {
+    Map<String, Object> params = new HashMap<>();
+    ResponseEntity<String> actual = restTemplate.getForEntity("/", String.class, params);
+
+    assertEquals(actual.getStatusCode(), HttpStatus.OK);
+    assertEquals(actual.getHeaders().getContentType(), CONTENT_TYPE);
+    assertEquals(actual.getBody(), "{}");
   }
 }
