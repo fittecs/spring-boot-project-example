@@ -17,6 +17,3 @@ spring:
 bigtable:
   project-id: ${BIGTABLE_PROJECT_ID:test-sbpe}
   instance-id: ${BIGTABLE_INSTANCE_ID:test-instance}
-logging:
-  level:
-    org.springframework: WARN
