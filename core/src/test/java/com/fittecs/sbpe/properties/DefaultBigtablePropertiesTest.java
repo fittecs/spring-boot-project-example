@@ -19,7 +19,7 @@ public class DefaultBigtablePropertiesTest implements YamlReader {
 
   @PostConstruct
   void init() throws IOException {
-    this.props = read("bigtable");
+    this.props = read("bigtable2");
   }
 
   @Test
